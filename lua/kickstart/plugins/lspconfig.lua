@@ -264,6 +264,7 @@ return {
             },
           },
         },
+
         yamlls = {
           settings = {
             yaml = {
@@ -281,6 +282,8 @@ return {
         },
 
         bashls = {},
+
+        phpactor = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -300,8 +303,12 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'markdownlint',
+        -- bash
         'shellcheck',
         'shfmt',
+        -- php
+        'phpcs',
+        'php-cs-fixer',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

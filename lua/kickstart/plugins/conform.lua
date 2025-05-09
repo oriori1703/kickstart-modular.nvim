@@ -6,9 +6,7 @@ return {
     keys = {
       {
         '<leader>f',
-        function()
-          require('conform').format { async = true, lsp_format = 'fallback' }
-        end,
+        function() require('conform').format { async = true, lsp_format = 'fallback' } end,
         mode = '',
         desc = '[F]ormat buffer',
       },
@@ -32,6 +30,7 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         php = { 'php_cs_fixer' },
+        markdown = { 'markdownlint', 'injected' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
